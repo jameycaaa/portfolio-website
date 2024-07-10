@@ -1,0 +1,497 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+}
+
+/* Color Palette */
+:root {
+  --primary-color: #9370DB;
+  /* Pastel Purple */
+  --secondary-color: #f8f8f8;
+  /* Light Background */
+  --accent-color: #C79FEF;
+  /* Lighter Purple Accent */
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* General Styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.bg-light {
+  background-color: var(--secondary-color);
+}
+
+/* Header */
+header {
+  background-color: white;
+  padding: 1.5em 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo-sub {
+  font-size: 0.6em;
+  font-weight: 400;
+  color: #333;
+  vertical-align: middle;
+  margin-left: 0.3em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 2em;
+}
+
+nav a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile Menu Toggle */
+#mobile-menu-toggle {
+  display: none;
+  /* Hide by default on larger screens */
+}
+
+/* Hero Section */
+#home {
+  padding: 8em 0;
+  text-align: center;
+  background-image: url('hero.png');
+  /* Add your image path */
+  background-size: cover;
+  /* Adjust size as needed (cover, contain, etc.) */
+  background-position: center;
+  /* Adjust position as needed (center, top, etc.) */
+  background-repeat: no-repeat;
+  /* Prevent image repeating */
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
+}
+
+.hero-text {
+  text-align: left;
+  margin-right: 2em;
+  /* Add spacing between text and image */
+  order: 2;
+  /* Text comes second */
+}
+
+.hero-image {
+  margin-left: 0;
+  /* Remove unnecessary margin */
+  order: 1;
+  /* Image comes first */
+}
+
+.hero-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  color: white;
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+/* About Section */
+
+#about {
+  background: linear-gradient(to bottom right, #f8f8f8 50%, #e0e0e0 50%);
+  /* Example gradient */
+  padding-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  /* Align items vertically */
+  align-items: center;
+  /* Center horizontally */
+  min-height: 100vh;
+  /* Ensure the section takes up full viewport height */
+}
+
+.skills {
+  margin-top: 3em;
+}
+
+.skill {
+  margin-bottom: 1.5em;
+}
+
+.progress {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0%;
+  transition: width 0.8s ease-in-out;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 5em 0;
+  background-color: #f9f9f9;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.filters button {
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filters button.active,
+.filters button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.project {
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  /* Hide image overflow for clean corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1em;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 5em 0;
+}
+
+.testimonials-slider {
+  display: flex;
+  overflow-x: auto;
+  padding-top: 10px;
+  /* Add top padding */
+}
+
+.testimonial {
+  min-width: 300px;
+  padding: 2em;
+  margin: 0 1em;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Add transition for smooth animation */
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.client-name {
+  font-style: italic;
+  text-align: right;
+  margin-top: 1em;
+}
+
+/* Blog Section */
+#blog {
+  padding: 5em 0;
+}
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.blog-post {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Section */
+#contact {
+  padding: 5em 0;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+
+  /* Navigation */
+  nav ul {
+    display: none;
+    /* Hide the navigation menu by default */
+  }
+
+  #mobile-menu-toggle {
+    display: block;
+    /* Show the mobile menu toggle */
+    /* Navigation (continued) */
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+
+  /* Mobile Menu */
+  nav ul.show {
+    display: block;
+    /* Show the menu when the toggle is clicked */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.show li {
+    display: block;
+    /* Stack list items vertically */
+    margin: 0;
+    padding: 1em;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    flex-direction: column;
+    /* Stack hero content vertically */
+  }
+
+  .hero-text {
+    margin-bottom: 2em;
+    text-align: center;
+    /* Center text on smaller screens */
+  }
+
+  .hero-image {
+    margin-left: 0;
+    /* Remove left margin on image */
+  }
+
+  /* Other Sections */
+  #about,
+  #portfolio,
+  #blog,
+  #contact {
+    padding: 4em 0;
+    /* Reduce padding on smaller screens */
+  }
+
+  /* Contact Form */
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9em;
+    /* Adjust font size for smaller screens */
+  }
+}
