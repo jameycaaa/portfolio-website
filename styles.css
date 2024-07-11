@@ -495,3 +495,62 @@ footer {
     /* Adjust font size for smaller screens */
   }
 }
+
+/* Hero Image Hover Effect */
+.hero-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 5px;
+  animation: floatImage 4s ease-in-out infinite;
+  /* Apply the animation */
+}
+
+/* Define the animation */
+@keyframes floatImage {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  /* Starting and ending position */
+  50% {
+    transform: translateY(-10px);
+  }
+
+  /* Move up slightly in the middle */
+}
+
+/* Footer Social Links */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
+}
+
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+/* Social Links Hover Animation */
+.social-links a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Add transform transition */
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+  /* Apply pop effect */
+}
