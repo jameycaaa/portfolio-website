@@ -554,3 +554,26 @@ footer {
   transform: scale(1.2);
   /* Apply pop effect */
 }
+
+/* Logo Pulse Animation */
+.logo img {
+  /* ... your existing logo styles ... */
+  animation: logoPulse 1s infinite;
+  /* Faster animation for more evident pulse */
+  transition: transform 0.3s ease;
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+    /* Increase scaling for more noticeable pulse */
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
